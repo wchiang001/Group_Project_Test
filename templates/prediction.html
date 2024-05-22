@@ -1,0 +1,15 @@
+<style>
+    .container {width:100%;margin:auto;}
+    @media (min-width: 600px) {.container {width: 80%;}}
+    @media (min-width: 768px) {.container {width: 60%;}}
+    @media (min-width: 1024px) {.container {width: 50%;}}
+</style>
+
+<div class="container">
+<h2>Please enter the exchange rate SGD to USD (eg 1.35)</h2>
+
+<form action="/dbs_price" method="post">
+    <p><input type="number" step="0.01" name="q"></p>
+    <p><input type="submit" value ="Enter"></p>
+</form>
+</div>

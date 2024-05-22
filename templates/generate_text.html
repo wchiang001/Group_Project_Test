@@ -1,0 +1,19 @@
+<style>
+    .container {width:100%;margin:auto;}
+    @media (min-width: 600px) {.container {width: 80%;}}
+    @media (min-width: 768px) {.container {width: 60%;}}
+    @media (min-width: 1024px) {.container {width: 50%;}}
+</style>
+
+<div class="container">
+<h2>Hi! Please tell me about yourself and get instant personalised finanical advise: </h2>
+<form action="/text_result_makersuite" method="post">
+    <h3>How old are you?</h3>
+    <p><input type="number" name="age"></p>
+    <h3>What is your risk appetite? (low/medium/high)</h3>
+    <p><input type="text" name="risk"></p>
+    <h3>What is your investment horizon? (in years)</h3>
+    <p><input type="number" name="investmentyears"></p>
+    <p><input type="submit" value ="Enter"></p>
+</form>
+</div>
