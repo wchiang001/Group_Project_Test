@@ -11,27 +11,6 @@ name = ""
 makersuite_api = os.getenv("MAKERSUITE_API_TOKEN")
 palm.configure(api_key=makersuite_api)
 
-
-model = {"model" : "models/chat-bison-001"}
-app = Flask(__name__)
-
-@app.route("/",methods = ["GET","POST"])
-def index():
-    return(render_template("index.html"))
-
-@app.route("/main",methods = ["GET","POST"])
-## testing script##
-def main():
-    global flag, name
-    if flag == 1:
-        username1 = request.form.get("User")
-        name = get_user_name(username1)
-        flag = 0
-        if name==None:
-            return(render_template("error.html"))
-        else:
-            return(render_template("main.html",r=name))
-
 def get_user_name(username):
     csv_file_path = "Users.csv"
     with open(csv_file_path, 'r') as csvfile:
@@ -42,6 +21,30 @@ def get_user_name(username):
             if row[0] == username:
                 return row[1]
     return None
+
+
+model = {"model" : "models/chat-bison-001"}
+app = Flask(__name__)
+
+@app.route("/",methods = ["GET","POST"])
+def index():
+    return(render_template("index.html"))
+
+
+
+
+@app.route("/main",methods = ["GET","POST"])
+
+def main():
+    global flag, name, get_user_name
+    if flag == 1:
+        username1 = request.form.get("User")
+        name = get_user_name(username1)   
+        flag = 0
+        if name==None:
+            return(render_template("error.html"))
+    return(render_template("main.html",r=name))
+
 
 @app.route("/prediction",methods = ["GET","POST"])
 def prediction():
