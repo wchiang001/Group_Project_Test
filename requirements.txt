@@ -4,4 +4,4 @@ replicate
 google-generativeai
 pysqlite3
 pandas
-sklearn
+scikit-learn
