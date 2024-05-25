@@ -3,3 +3,4 @@ gunicorn
 replicate
 google-generativeai
 pysqlite3
+pandas
