@@ -1,0 +1,24 @@
+<style>
+    .container {width:100%;margin:auto;}
+    @media (min-width: 600px) {.container {width: 80%;}}
+    @media (min-width: 768px) {.container {width: 60%;}}
+    @media (min-width: 1024px) {.container {width: 50%;}}
+</style>
+
+<div class="container">
+<h2>Hi! Please tell me about your prospect and get results</h2>
+<form action="/MLPredictResults" method="post">
+    <h3>What is his/her name?</h3>
+    <p><input type="text" name="Name"></p>
+    <h3>How old are you?</h3>
+    <p><input type="number" name="age"></p>
+    <h3>How many times have you logged in?</h3>
+    <p><input type="number" name="no_login"></p>
+    <h3>How many times have you transacted?</h3>
+    <p><input type="number" name="No_Transactions"></p>
+    <h3>How much money do you have?</h3>
+    <p><input type="number" name="Total_Deposit"></p>
+
+    <p><input type="submit" value ="Enter"></p>
+</form>
+</div>
